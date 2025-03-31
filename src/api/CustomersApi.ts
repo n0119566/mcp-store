@@ -2,7 +2,7 @@ import axios from "axios";
 import { ICustomer } from "../interaces/CustomInterface.js";
 import { IOrder } from "../interaces/OrderInterface.js";
 
-export async function getAllCustomers(): Promise<ICustomer[]> {
+export async function getAllCustomersApi(): Promise<ICustomer[]> {
   try {
     const { data } = await axios.get<ICustomer[]>(
       "http://localhost:3000/api/customers/"
@@ -14,7 +14,7 @@ export async function getAllCustomers(): Promise<ICustomer[]> {
   }
 }
 
-export async function getOrdersForCustomer(
+export async function getOrdersForCustomerApi(
   customerId: string
 ): Promise<IOrder[]> {
   try {
@@ -28,7 +28,7 @@ export async function getOrdersForCustomer(
   }
 }
 
-export async function getCustomerByName(
+export async function getCustomerByNameApi(
   customerName: string
 ): Promise<ICustomer[]> {
   try {
